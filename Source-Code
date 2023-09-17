@@ -1,0 +1,59 @@
+local function optimize()
+	for i,v in pairs(game:GetDescendants()) do
+		if v:IsA("Fire") or v:IsA("Sparkles") or v:IsA("Smoke") or v:IsA("ParticleEmitter") or v:IsA("PointLight") or v:IsA("SurfaceLight") or v:IsA("SpotLight") or v:IsA("Atmosphere") or v:IsA("SunRaysEffect") or v:IsA("DepthOfFieldEffect") or v:IsA("ColorCorrectionEffect") or v:IsA("BloomEffect") or v:IsA("BlurEffect") or v:IsA("DepthOfFieldEffect") then
+			v:Remove()
+		elseif v:IsA("Sky") then
+			v.CelestialBodiesShown = false
+			v.MoonAngularSize = 0
+			v.MoonTextureId = "rbxassetid://7158543589"
+			v.SkyboxBk = "rbxassetid://7158543589"
+			v.SkyboxDn = "rbxassetid://7158543589"
+			v.SkyboxFt = "rbxassetid://7158543589"
+			v.SkyboxLf = "rbxassetid://7158543589"
+			v.SkyboxRt = "rbxassetid://7158543589"
+			v.SkyboxUp = "rbxassetid://7158543589"
+			v.StarCount = 0
+			v.SunAngularSize = 0
+			v.SunTextureId = "rbxassetid://7158543589"
+		elseif v:IsA("BasePart") then
+			v.Material = Enum.Material.SmoothPlastic
+			v.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+			v.RightSurface = Enum.SurfaceType.SmoothNoOutlines
+			v.LeftSurface = Enum.SurfaceType.SmoothNoOutlines
+			v.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
+			v.FrontSurface = Enum.SurfaceType.SmoothNoOutlines
+			v.BackSurface = Enum.SurfaceType.SmoothNoOutlines
+			v.CastShadow = false
+			v.Reflectance = 0
+		end
+	end
+	local lighting = game:GetService("Lighting")
+	if lighting then
+		lighting.Ambient = Color3.fromRGB(255,255,255)
+		lighting.Brightness = 0
+		lighting.ColorShift_Top = Color3.fromRGB(255,255,255)
+		lighting.ColorShift_Bottom = Color3.fromRGB(255,255,255)
+		lighting.EnvironmentDiffuseScale = 0
+		lighting.EnvironmentSpecularScale = 0
+		lighting.GlobalShadows = false
+		lighting.OutdoorAmbient = Color3.fromRGB(255,255,255)
+		if lighting.ShadowSoftness then
+			lighting.ShadowSoftness = 0
+		end
+		lighting.ClockTime = 14
+		lighting.GeographicLatitude = 0
+		lighting.ExposureCompensation = 0
+	end
+	local terrain = game:GetService("Workspace"):FindFirstChild("Terrain")
+	if terrain then
+		terrain.WaterColor = Color3.fromRGB(255,255,255)
+		terrain.WaterReflectance = 0
+		terrain.WaterTransparency = 1
+		terrain.WaterWaveSize = 0
+		terrain.WaterWaveSpeed = 0
+	end
+end
+
+if optimize then
+	optimize()
+end
