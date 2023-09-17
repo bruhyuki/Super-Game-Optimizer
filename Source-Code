@@ -57,6 +57,20 @@ local v = lighting:FindFirstChildOfClass("Sky")
 			v.StarCount = 0
 			v.SunAngularSize = 0
 			v.SunTextureId = "rbxassetid://7158543589"
+else
+local newsky = Instance.new("Sky", lighting)
+		newsky.CelestialBodiesShown = false
+			newsky.MoonAngularSize = 0
+			newsky.MoonTextureId = "rbxassetid://7158543589"
+			newsky.SkyboxBk = "rbxassetid://7158543589"
+			newsky.SkyboxDn = "rbxassetid://7158543589"
+			newsky.SkyboxFt = "rbxassetid://7158543589"
+			newsky.SkyboxLf = "rbxassetid://7158543589"
+			newsky.SkyboxRt = "rbxassetid://7158543589"
+			newsky.SkyboxUp = "rbxassetid://7158543589"
+			newsky.StarCount = 0
+			newsky.SunAngularSize = 0
+			newsky.SunTextureId = "rbxassetid://7158543589"
 end
 	end
 	local terrain = game:GetService("Workspace"):FindFirstChild("Terrain")
