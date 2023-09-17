@@ -43,6 +43,21 @@ local function optimize()
 		lighting.ClockTime = 14
 		lighting.GeographicLatitude = 0
 		lighting.ExposureCompensation = 0
+if lighting:FindFirstChildOfClass("Sky") then
+local v = lighting:FindFirstChildOfClass("Sky")
+		v.CelestialBodiesShown = false
+			v.MoonAngularSize = 0
+			v.MoonTextureId = "rbxassetid://7158543589"
+			v.SkyboxBk = "rbxassetid://7158543589"
+			v.SkyboxDn = "rbxassetid://7158543589"
+			v.SkyboxFt = "rbxassetid://7158543589"
+			v.SkyboxLf = "rbxassetid://7158543589"
+			v.SkyboxRt = "rbxassetid://7158543589"
+			v.SkyboxUp = "rbxassetid://7158543589"
+			v.StarCount = 0
+			v.SunAngularSize = 0
+			v.SunTextureId = "rbxassetid://7158543589"
+end
 	end
 	local terrain = game:GetService("Workspace"):FindFirstChild("Terrain")
 	if terrain then
