@@ -1,6 +1,6 @@
 local function optimize()
 	for i,v in pairs(game:GetDescendants()) do
-		if v:IsA("Fire") or v:IsA("Sparkles") or v:IsA("Smoke") or v:IsA("ParticleEmitter") or v:IsA("PointLight") or v:IsA("SurfaceLight") or v:IsA("SpotLight") or v:IsA("Atmosphere") or v:IsA("SunRaysEffect") or v:IsA("DepthOfFieldEffect") or v:IsA("ColorCorrectionEffect") or v:IsA("BloomEffect") or v:IsA("BlurEffect") or v:IsA("DepthOfFieldEffect") then
+		if v:IsA("Clouds") or v:IsA("Beam") or v:IsA("Trail") or v:IsA("Fire") or v:IsA("Sparkles") or v:IsA("Smoke") or v:IsA("ParticleEmitter") or v:IsA("PointLight") or v:IsA("SurfaceLight") or v:IsA("SpotLight") or v:IsA("Atmosphere") or v:IsA("SunRaysEffect") or v:IsA("DepthOfFieldEffect") or v:IsA("ColorCorrectionEffect") or v:IsA("BloomEffect") or v:IsA("BlurEffect") or v:IsA("DepthOfFieldEffect") then
 			v:Remove()
 		elseif v:IsA("Sky") then
 			v.CelestialBodiesShown = false
